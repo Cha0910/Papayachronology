@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AcientBook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\AcientBook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BackButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\BackButton.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BackButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TradeImages\BackButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Battle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\Battle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Beer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Beer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BigStaff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\BigStaff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BloodSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\BloodSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BlueMedicine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\BlueMedicine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BookFlip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Musics\BookFlip.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BookTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MainMenuImages\BookTitle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Charm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\Charm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Claw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Claw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClothArmor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\ClothArmor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ColorfulDagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\ColorfulDagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dexterity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\Dexterity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Musics\Fail.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FishingRod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\FishingRod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\Gold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GoldArmor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\GoldArmor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GreatSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\GreatSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GreenMedicine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\GreenMedicine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HealingPotion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\HealingPotion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hinor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Hinor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HinorGreatSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\HinorGreatSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Honey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Honey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Intelligence" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\Intelligence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemToolTipBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\ItemToolTipBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainMenuBgm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Musics\MainMenuBgm.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ManaLantern" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\ManaLantern.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TradeImages\Mat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Meat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Meat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MiraeroNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fonts\MiraeroNormal.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mouseOverBackButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\mouseOverBackButton.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mouseOverBackButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TradeImages\mouseOverBackButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PaldinArmor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\PaldinArmor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PaldinGreatSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\PaldinGreatSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\PlayBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\PlayerImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlusButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\PlusButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlusButton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\PlusButton2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RedMedicine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\RedMedicine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Robe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Robe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Salmon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Salmon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScrollDownArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\ScrollDownArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScrollThumb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\ScrollThumb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScrollTrack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\ScrollTrack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScrollUpArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\ScrollUpArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SealingWax" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\YesNoWIndowImages\SealingWax.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Seed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Seed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Seedling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Seedling.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SettingButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SettingWindowimages\SettingButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SilverSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\SilverSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sliderbar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SettingWindowimages\Sliderbar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SliderEmpty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SettingWindowimages\SliderEmpty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SliderFill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SettingWindowimages\SliderFill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sorcerer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Sorcerer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stamina" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\Stamina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Stick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Strength" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\Strength.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Success" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Musics\Success.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Table" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MainMenuImages\Table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Torch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Torch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TrollHammer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\TrollHammer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Water" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemImages\Water.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Win" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Musics\Win.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Wizdom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayImages\Wizdom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="YesNoWindowBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\YesNoWIndowImages\YesNoWindowBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

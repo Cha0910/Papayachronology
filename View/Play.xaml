@@ -1,0 +1,715 @@
+﻿<UserControl x:Class="파파야연대기.View.Play"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:파파야연대기"
+             mc:Ignorable="d" 
+             FontFamily="/Resources/Fonts/#MiraeroNormal"
+             d:DesignHeight="768" d:DesignWidth="1152">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/PlayImages/PlayBackground.png"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="16*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Grid x:Name="PlayerIcon" Grid.Row="0" Margin="54,66,330,15">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Resources/PlayImages/PlayerImage.png"/>
+                    </Grid.Background>
+                </Grid>
+
+                <!-- #region PlayerStatus...-->
+                <Grid x:Name="PlayerStatus" Grid.Row="0" Margin="166,66,52,15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Border x:Name="Strength" Grid.Column="0" Grid.Row="0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="/Resources/PlayImages/Strength.png" Margin="5"/>
+                            <TextBlock Grid.Column="1" Text="{Binding player.Strength}" Style="{StaticResource StatusTexts}"/>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="Dexterity" Grid.Column="1" Grid.Row="0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="/Resources/PlayImages/Dexterity.png" Margin="0,5"/>
+                            <TextBlock Grid.Column="1" Text="{Binding player.Dexterity}" Style="{StaticResource StatusTexts}"/>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="Stamina" Grid.Column="2" Grid.Row="0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="/Resources/PlayImages/Stamina.png" Margin="5"/>
+                            <TextBlock Grid.Column="1" Text="{Binding player.Stamina}" Style="{StaticResource StatusTexts}"/>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="Intelligence" Grid.Column="0" Grid.Row="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="/Resources/PlayImages/Intelligence.png" Margin="5"/>
+                            <TextBlock Grid.Column="1" Text="{Binding player.Intelligence}" Style="{StaticResource StatusTexts}"/>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="Wizdom" Grid.Column="1" Grid.Row="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="/Resources/PlayImages/Wizdom.png" Margin="5"/>
+                            <TextBlock Grid.Column="1" Text="{Binding player.Wizdom}" Style="{StaticResource StatusTexts}"/>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="Charm" Grid.Column="2" Grid.Row="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="/Resources/PlayImages/Charm.png" Margin="3"/>
+                            <TextBlock Grid.Column="1" Text="{Binding player.Charm}" Style="{StaticResource StatusTexts}"/>
+                        </Grid>
+                    </Border>
+
+                </Grid>
+
+                <Grid x:Name="PlayerHP" Grid.Row="1" Margin="40,10,317,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0">
+                        <TextBlock Text="체력" Style="{StaticResource StatusTexts}" FontSize="18"/>
+                    </Border>
+                    <Border Grid.Column="1">
+                        <TextBlock Text="{Binding player.CurrentHP}" Style="{StaticResource StatusTexts}" HorizontalAlignment="Right"/>
+                    </Border>
+                    <Border Grid.Column="2">
+                        <TextBlock Text="/" Style="{StaticResource StatusTexts}" HorizontalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Column="3">
+                        <TextBlock Text="{Binding player.MaximumHP}" Style="{StaticResource StatusTexts}" HorizontalAlignment="Right"/>
+                    </Border>
+                </Grid>
+
+                <Slider x:Name="HPBar" Grid.Row="1" Maximum="{Binding player.MaximumHP}" Minimum="0" Value="{Binding player.CurrentHP}"
+                        Style="{StaticResource Horizontal_Slider}" IsEnabled="False" Margin="163,15,55,17" />
+                <!--#endregion-->
+
+                <!--#region Equipment...-->
+                <Grid Grid.Row="2" Margin="220,55,150,350">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="전투력" Style="{StaticResource StatusTexts}" FontSize="15"/>
+                    <TextBlock Grid.Column="1" Text="{Binding player.CombatPower}" Style="{StaticResource StatusTexts}" FontSize="15"/>
+                </Grid>
+
+                <Button x:Name="WeaponSlot" Grid.Row="2" Style="{StaticResource InventoryButton}"
+                            Click="WeaponSlot_Click"  Margin="47,6,336,358">
+                    <Button.Background>
+                        <ImageBrush ImageSource="{Binding player.WeaponSlot.ImageUri}"/>
+                    </Button.Background>
+                    <Button.ToolTip>
+                        <ToolTip Style="{StaticResource InventoryToolTip}">
+                            <Grid Height="200" Width="180">
+                                <Grid.Background>
+                                    <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                </Grid.Background>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="70"/>
+                                    <RowDefinition Height="130"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.WeaponSlot.Name}"/>
+                                <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.WeaponSlot.Information}" />
+                            </Grid>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+
+                <Button x:Name="ArmorSlot" Grid.Row="2" Style="{StaticResource InventoryButton}"
+                            Click="ArmorSlot_Click"  Margin="130,6,252,358">
+                    <Button.Background>
+                        <ImageBrush ImageSource="{Binding player.ArmorSlot.ImageUri}"/>
+                    </Button.Background>
+                    <Button.ToolTip>
+                        <ToolTip Style="{StaticResource InventoryToolTip}">
+                            <Grid Height="200" Width="180">
+                                <Grid.Background>
+                                    <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                </Grid.Background>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="70"/>
+                                    <RowDefinition Height="130"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.ArmorSlot.Name}"/>
+                                <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.ArmorSlot.Information}" />
+                            </Grid>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+                <!--#endregion-->
+
+                <!--#region Inventory...-->
+                <Grid x:Name="Gold" Grid.Row="2" Margin="309,45,62,350">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0">
+                        <Image Source="/Resources/PlayImages/Gold.png"/>
+                    </Border>
+                    <Border Grid.Column="1">
+                        <TextBlock Text="{Binding player.Gold}" FontSize="20" Foreground="#914F2F"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </Grid>
+
+                <Grid x:Name="Inventory" Grid.Row="2" Margin="59,90,62,36">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Button x:Name="Slot0" Grid.Column="0" Grid.Row="0" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[0]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[0].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[0].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[0].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot1" Grid.Column="1" Grid.Row="0" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[1]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[1].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[1].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[1].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot2" Grid.Column="2" Grid.Row="0" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[2]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[2].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[2].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[2].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot3" Grid.Column="3" Grid.Row="0" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[3]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[3].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[3].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[3].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot4" Grid.Column="0" Grid.Row="1" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[4]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[4].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[4].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[4].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot5" Grid.Column="1" Grid.Row="1" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[5]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[5].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[5].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[5].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot6" Grid.Column="2" Grid.Row="1" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[6]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[6].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[6].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[6].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot7" Grid.Column="3" Grid.Row="1" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[7]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[7].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[7].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[7].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot8" Grid.Column="0" Grid.Row="2" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[8]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[8].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[8].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[8].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot9" Grid.Column="1" Grid.Row="2" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[9]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[9].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[9].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[9].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot10" Grid.Column="2" Grid.Row="2" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[10]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[10].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[10].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[10].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot11" Grid.Column="3" Grid.Row="2" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[11]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[11].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[11].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[11].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot12" Grid.Column="0" Grid.Row="3" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[12]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[12].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[12].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[12].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot13" Grid.Column="1" Grid.Row="3" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[13]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[13].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[13].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[13].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot14" Grid.Column="2" Grid.Row="3" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[14]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[14].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[14].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[14].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+
+                    <Button x:Name="Slot15" Grid.Column="3" Grid.Row="3" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding player.HasItem[15]}" Click="InventoryButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="{Binding player.Inventory[15].ImageUri}"/>
+                        </Button.Background>
+                        <Button.ToolTip>
+                            <ToolTip Style="{StaticResource InventoryToolTip}">
+                                <Grid Height="200" Width="180">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                                    </Grid.Background>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70"/>
+                                        <RowDefinition Height="130"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding player.Inventory[15].Name}"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding player.Inventory[15].Information}" />
+                                </Grid>
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                </Grid>
+                <!--#endregion-->
+
+                <!--#region BackButton...-->
+                <Canvas Grid.Row="3">
+                    <Button x:Name="BackButton" Height="84" Canvas.Left="328" Width="72" BorderBrush="Transparent"
+                            Click="BackButton_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Image x:Name="buttonImage" Source="/Resources/PlayImages/BackButton.jpg" Stretch="Uniform"/>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="buttonImage" Property="Source" Value="/Resources/PlayImages/mouseOverBackButton.jpg"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Canvas>
+                <!--#endregion-->
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <ScrollViewer Margin="40,65,40,40" x:Name="EventTextBlockScroll" PreviewMouseDown="EventTextBlockScroll_PreviewMouseDown">
+                    <StackPanel>
+                        <TextBlock x:Name="EventTextBlock" Style="{StaticResource EventTextBlock}"/>
+
+                        <TextBlock x:Name="TempTextBlock" Style="{StaticResource EventTextBlock}"/>
+
+                        <TextBlock x:Name="ColorTextBlock" Style="{StaticResource EventTextBlock}"/>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <!--#region SelectButtons...-->
+                <StackPanel Grid.Row="1" x:Name="ButtonsPanel">
+                    <Button x:Name="selectButton1"
+                            Click="selectButton1_Click"                            
+                            Style="{StaticResource SelectButtons}">
+                        <StackPanel Orientation="Horizontal" Height="30">
+                            <Label x:Name="selectButton1Content" Style="{StaticResource SelectButtonLabel}"
+                                   Content="{Binding gameText.SelectButton1Text}"/>
+
+                            <Label x:Name="selectButton1StatImage">
+                                <Image Source="{Binding gameText.SelectButton1Image}" Stretch="Fill"/>
+                            </Label>
+
+                            <Label x:Name="selectButton1Probability"
+                                   Content="{Binding gameText.SelectButton1Probability}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="selectButton2"
+                            Click="selectButton2_Click"
+                            Style="{StaticResource SelectButtons}">
+                        <StackPanel Orientation="Horizontal" Height="30">
+                            <Label Style="{StaticResource SelectButtonLabel}"
+                                   Content="{Binding gameText.SelectButton2Text}"/>
+
+                            <Label>
+                                <Image Source="{Binding gameText.SelectButton2Image}"/>
+                            </Label>
+
+                            <Label Content="{Binding gameText.SelectButton2Probability}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="selectButton3"
+                            Click="selectButton3_Click"
+                            Style="{StaticResource SelectButtons}">
+                        <StackPanel Orientation="Horizontal" Height="30">
+                            <Label Style="{StaticResource SelectButtonLabel}"
+                                   Content="{Binding gameText.SelectButton3Text}"/>
+
+                            <Label>
+                                <Image Source="{Binding gameText.SelectButton3Image}"/>
+                            </Label>
+
+                            <Label Content="{Binding gameText.SelectButton3Probability}"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <!--#endregion-->
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

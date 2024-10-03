@@ -1,0 +1,77 @@
+﻿<Window x:Class="파파야연대기.View.YesNoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:파파야연대기"
+        FontFamily="/Resources/Fonts/#MiraeroNormal"
+        Foreground="#914F2F"
+        mc:Ignorable="d"
+        Title="YesNoWindow" Height="400" Width="600" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="Transparent">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/YesNoWindowImages/YesNoWindowBackground.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <TextBlock FontSize="35"
+                   Text="돌아가시겠습니까?"
+                   Margin="165,89,128,268"/>
+
+        <Button x:Name="YesButton"
+                Margin="153,155,347,145"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                FontSize="30"
+                Click="YesButton_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Image x:Name="buttonImage" Stretch="Uniform"/>
+                                    <TextBlock x:Name="buttonText" Text="-예" Foreground="#914F2F" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="buttonImage" Property="Source" Value="/Resources/YesNoWindowImages/SealingWax.png"/>
+                                        <Setter TargetName="buttonText" Property="Text" Value=""/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="NoButton"
+                Margin="345,155,155,145"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                FontSize="30"
+                Click="NoButton_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Image x:Name="buttonImage" Stretch="Uniform"/>
+                                    <TextBlock x:Name="buttonText" Text="-아니오" VerticalAlignment="Center" Foreground="#914F2F" HorizontalAlignment="Center"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="buttonImage" Property="Source" Value="/Resources/YesNoWindowImages/SealingWax.png"/>
+                                        <Setter TargetName="buttonText" Property="Text" Value=""/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Window>

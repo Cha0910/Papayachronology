@@ -1,0 +1,92 @@
+﻿<Window x:Class="파파야연대기.View.StatUpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:파파야연대기.View"
+        mc:Ignorable="d"
+        Title="StatUpWindow" Height="400" Width="600" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="Transparent">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/YesNoWindowImages/YesNoWindowBackground.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid Margin="143,47,322,297">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="/Resources/PlayImages/Strength.png" Margin="5"/>
+            <TextBlock Grid.Column="1" Text="{Binding player.Strength}" Style="{StaticResource StatusTexts}"/>
+            <Button Grid.Column="2" x:Name="StrengthButton" Click="StatUpButton_Click" Style="{StaticResource PlusButton}"/> 
+
+        </Grid>
+
+        <Grid Margin="143,103,322,241">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="/Resources/PlayImages/Dexterity.png" Margin="0,5"/>
+            <TextBlock Grid.Column="1" Text="{Binding player.Dexterity}" Style="{StaticResource StatusTexts}"/>
+            <Button Grid.Column="2" x:Name="DexterityButton" Click="StatUpButton_Click" Style="{StaticResource PlusButton}"/>
+        </Grid>
+
+        <Grid Margin="143,164,322,180">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="/Resources/PlayImages/Stamina.png" Margin="5"/>
+            <TextBlock Grid.Column="1" Text="{Binding player.Stamina}" Style="{StaticResource StatusTexts}"/>
+            <Button Grid.Column="2" x:Name="StaminaButton" Click="StatUpButton_Click" Style="{StaticResource PlusButton}"/>
+        </Grid>
+
+        <Grid Margin="334,47,131,297">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="/Resources/PlayImages/Intelligence.png" Margin="5"/>
+            <TextBlock Grid.Column="1" Text="{Binding player.Intelligence}" Style="{StaticResource StatusTexts}"/>
+            <Button Grid.Column="2" x:Name="IntelligenceButton" Click="StatUpButton_Click" Style="{StaticResource PlusButton}"/>
+        </Grid>
+        
+        <Grid Margin="334,103,131,241">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="/Resources/PlayImages/Wizdom.png" Margin="5"/>
+            <TextBlock Grid.Column="1" Text="{Binding player.Wizdom}" Style="{StaticResource StatusTexts}"/>
+            <Button Grid.Column="2" x:Name="WizdomButton" Click="StatUpButton_Click" Style="{StaticResource PlusButton}"/>
+        </Grid>
+
+        <Grid Margin="334,164,131,180">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="/Resources/PlayImages/Charm.png" Margin="3"/>
+            <TextBlock Grid.Column="1" Text="{Binding player.Charm}" Style="{StaticResource StatusTexts}"/>
+            <Button Grid.Column="2" x:Name="CharmButton" Click="StatUpButton_Click" Style="{StaticResource PlusButton}"/>
+        </Grid>
+
+        <Grid Margin="153,225,322,136">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="잔여 포인트" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Column="1" x:Name="RemainingPointsTextBlock" Margin="10" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        </Grid>
+
+        <Button x:Name="CloseButton" Content="닫기" Click="CloseButton_Click" Margin="264,220,0,129" Style="{StaticResource CloseButton}" Width="82"/>
+    </Grid>
+</Window>

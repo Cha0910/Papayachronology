@@ -1,0 +1,576 @@
+﻿<Window x:Class="파파야연대기.View.TradeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:파파야연대기"
+        mc:Ignorable="d"
+        Title="TradeWindow" Height="350" Width="350" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" Background="Transparent">
+    <Grid Grid.Row="0">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/TradeImages/Mat.png"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--#region Trader Inventory...-->
+        <Button x:Name="Slot0" Grid.Column="0" Grid.Row="0" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[0]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[0].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[0].Name}"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[0].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[0].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Button x:Name="Slot1" Grid.Column="1" Grid.Row="0" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[1]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[1].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[1].Name}"
+                                   VerticalAlignment="Bottom"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[1].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[1].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Button x:Name="Slot2" Grid.Column="2" Grid.Row="0" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[2]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[2].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[2].Name}"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[2].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[2].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Button x:Name="Slot3" Grid.Column="3" Grid.Row="0" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[3]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[3].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[3].Name}"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[3].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[3].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Button x:Name="Slot4" Grid.Column="0" Grid.Row="1" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[4]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[4].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[4].Name}"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[4].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[4].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Button x:Name="Slot5" Grid.Column="1" Grid.Row="1" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[5]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[5].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[5].Name}"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[5].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[5].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Button x:Name="Slot6" Grid.Column="2" Grid.Row="1" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[6]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[6].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[6].Name}"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[6].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[6].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Button x:Name="Slot7" Grid.Column="3" Grid.Row="1" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[7]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[7].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[7].Name}"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[7].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[7].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Button x:Name="Slot8" Grid.Column="0" Grid.Row="2" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[8]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[8].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[8].Name}"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[8].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[8].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Button x:Name="Slot9" Grid.Column="1" Grid.Row="2" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[9]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[9].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[9].Name}"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[9].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[9].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Button x:Name="Slot10" Grid.Column="2" Grid.Row="2" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[10]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[10].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[10].Name}"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[10].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[10].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Button x:Name="Slot11" Grid.Column="3" Grid.Row="2" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[11]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[11].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[11].Name}"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[11].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[11].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Button x:Name="Slot12" Grid.Column="0" Grid.Row="3" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[12]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[12].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[12].Name}"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[12].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[12].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Button x:Name="Slot13" Grid.Column="1" Grid.Row="3" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[13]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[13].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[13].Name}"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[13].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[13].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+
+        <Button x:Name="Slot14" Grid.Column="2" Grid.Row="3" Style="{StaticResource InventoryButton}"
+                            IsEnabled="{Binding trader.HasItem[14]}" Click="InventoryButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding trader.Inventory[14].ImageUri}"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Style="{StaticResource InventoryToolTip}">
+                    <Grid Height="200" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/PlayImages/ItemToolTipBackground.png"/>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Style="{StaticResource InventoryToolTipName}"
+                                           Content="{Binding trader.Inventory[14].Name}"/>
+                        <Border Grid.Row="1" HorizontalAlignment="Right">
+                            <Grid Margin="0,0,55,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Style="{StaticResource InventoryToolTipPrice}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding trader.Inventory[14].Price}"/>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Style="{StaticResource InventoryToolTipInformation}"
+                                               Text="{Binding trader.Inventory[14].Information}" />
+                    </Grid>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+        <!--#endregion-->
+        
+        <Button x:Name="BackButton" Grid.Column="3" Grid.Row="3"
+                BorderBrush="Transparent" Click="BackButton_Click" Margin="30,30,0,0" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Image x:Name="buttonImage" Source="/Resources/TradeImages/BackButton.png" Stretch="Uniform"/>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="buttonImage" Property="Source" Value="/Resources/TradeImages/mouseOverBackButton.png"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+        
+    </Grid>
+</Window>

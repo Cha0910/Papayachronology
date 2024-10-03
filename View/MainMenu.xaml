@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="파파야연대기.View.MainMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:파파야연대기"
+             mc:Ignorable="d"
+             FontFamily="/Resources/Fonts/#MiraeroNormal"
+             Foreground="#4175BEFF"
+             d:DesignHeight="768" d:DesignWidth="1152">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/MainMenuImages/Table.png"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Resources/MainMenuImages/BookTitle.png" Stretch="UniformToFill"/>
+            </Grid.Background>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="1"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   FontSize="60"
+                   Text="파파야&#10;연대기"
+                   Margin="130,10,80,0"/>
+
+            <Canvas Grid.Row="2">
+                <StackPanel Margin="200,80">
+                    <Button x:Name="NewAdventureButton"
+                            Content="-새로운 모험"
+                            Click="NewAdventureButton_Click"
+                            Style="{StaticResource MainMenuButtons}"/>
+                    <Button x:Name="ContinueButton"
+                            Content="-이어하기   "
+                            Style="{StaticResource MainMenuButtons}"
+                            Click="ContinueButton_Click"/>
+                    <Button x:Name="ExitButton"
+                            Content="-종료       "
+                            Click="ExitButton_Click"
+                            Style="{StaticResource MainMenuButtons}"/>
+                </StackPanel>
+            </Canvas>
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <Button x:Name="SettingButton"
+                    Style="{StaticResource MainMenuButtons}"
+                    Click="SettingButton_Click"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right"
+                    Height="100" Margin="0" Width="100">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/SettingWindowImages/SettingButton.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+
+    </Grid>
+</UserControl>

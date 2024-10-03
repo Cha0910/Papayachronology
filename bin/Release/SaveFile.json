@@ -1,0 +1,32 @@
+{
+  "player": {
+    "MaximumHP": 30,
+    "CurrentHP": 30,
+    "Strength": 14,
+    "Dexterity": 10,
+    "Stamina": 9,
+    "Intelligence": 11,
+    "Wizdom": 10,
+    "Charm": 9,
+    "Gold": 20,
+    "WeaponSlot": {
+      "ItemID": 3001
+    },
+    "ArmorSlot": {
+      "ItemID": 4001
+    },
+    "Inventory": []
+  },
+  "gameText": {},
+  "gameEventManager": {
+    "GameChapter": 1,
+    "EventNumber": 0,
+    "NextEventID": 10001,
+    "NowEventID": 10000,
+    "ButtonNumber": 1,
+    "RefugeeAlive": false,
+    "BlackSmithAlive": false,
+    "hasSeedling": false,
+    "isBurnTree": false
+  }
+}
