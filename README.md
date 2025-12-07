@@ -1,23 +1,33 @@
 #  파파야 연대기
 
+---
+
 ## 프로젝트 개요
 
-파파야 연대기(Papaya Chronicle)는 WPF 기반 MVVM 아키텍처로 제작한 싱글플레이 텍스트 기반 어드벤처 RPG입니다.
-플레이어는 선택지 기반 이벤트를 통해 스토리를 진행하며, 전투·성장·아이템·거래·엔딩 분기 등 다양한 RPG 시스템을 경험할 수 있습니다.
-게임 전반의 흐름은 챕터별 이벤트 시스템으로 구성되어 있으며, 플레이어의 능력치와 선택에 따라 전투 결과, 성공 확률, 스토리 분기, 엔딩이 달라지는 구조로 설계되었습니다.
+파파야 연대기(Papaya Chronicle)는 WPF와 MVVM 패턴을 기반으로 만든 싱글플레이 텍스트 어드벤처 RPG입니다.
+플레이어는 다양한 이벤트 선택을 통해 스토리를 진행하며, 전투, 능력치 성장, 아이템 사용 및 거래 등 RPG 요소를 경험할 수 있습니다.
+
+개발 인원: 1인
+
+개발기간: 2021.03 ~ 2021.06
+
+---
 
 ## 주요 기능
 
-### 1. 플레이어 시스템
+<details>
+<summary> 1. 플레이어 시스템 </summary>
 
-* 능력치 상승 및 감소
+* 능력치(Strength, HP, CombatPower) 상승 및 감소
 * 인벤토리/장비 슬롯 관리
 * 아이템 사용 효과 적용 (소모품, 무기, 방어구)
 * 전투 결과 판정 및 스탯 변화
 
 ![예시 이미지](Resources/readme/player.png)
+</details>
 
-### 2. 이벤트/스토리 진행
+<details>
+<summary> 2. 이벤트/스토리 진행 </summary>
 
 * `GameEventManager` 중심의 이벤트 ID 기반 흐름 제어
 * 챕터별 이벤트 파일 분리 (Chapter0~3 + Epilogue)
@@ -25,28 +35,36 @@
 * 확률 기반 성공/실패 판정 시스템
 
 ![예시 이미지](Resources/readme/event.png)
+</details>
 
-### 3. 거래 및 경제
+<details>
+<summary> 3. 거래 및 경제 </summary>
 
 * `Trader`를 통한 아이템 구매/판매
 * 상점 재고 시스템
 * 아이템 희귀도 및 가격 기반 밸런스
 
 ![예시 이미지](Resources/readme/trader.png)
+</details>
 
-### 4. 저장/불러오기
+<details>
+<summary> 4. 저장/불러오기 </summary>
 
 * `GameSession` 전체 상태를 JSON으로 직렬화
 * 게임 시작 시 저장 파일 존재 여부 확인
 * 이어하기/새 게임 기능 제공
+</details>
 
-### 5. UI / UX (WPF)
+<details>
+<summary> 5. UI / UX (WPF) </summary>
 
 * MVVM 기반 데이터 바인딩
 * 스탯 창, 인벤토리, 장비창 UI
 * 선택지 버튼 이벤트 처리
 * 팝업 윈도우(경고, 알림, 거래, 능력치 분배 등) 제공
 * BGM/효과음 볼륨 조절
+</details>
+
 ---
 
 ## 문제 및 해결
@@ -73,15 +91,17 @@
 
 ## 프로젝트 구조
 
-### 1. 📂 ViewModel
+<details>
+<summary>1. 📂 ViewModel </summary>
 
 | 파일                   | 설명                                                                                                           |
 | -------------------- | ------------------------------------------------------------------------------------------------------------ |
 | **`GameSession.cs`** | 게임 전반의 상태를 보유하는 핵심 ViewModel. 모든 Model(Player, GameText, Trader, EventManager)을 통합하며 View와 바인딩되는 데이터의 중심 역할. |
 
----
+</details>
 
-### 2. 📂 Model
+<details>
+<summary> 2. 📂 Model </summary>
 
 | 파일                                        | 역할 및 내용                                                    |
 | ----------------------------------------- | ---------------------------------------------------------- |
@@ -91,28 +111,30 @@
 | **`Trader.cs`**                           | 상점 재고 관리 및 아이템 구매/판매를 처리하는 상인 모델.                |
 | **`PropertyChangedNotificationClass.cs`** | 모든 Model들이 상속받는 INotifyPropertyChanged 기반 MVP/MVVM 지원 클래스. |
 
----
+</details>
 
-### 3. 📂 Events
+<details>
+<summary> 3. 📂 Events </summary>
 
 | 파일                                                                                                 | 설명                                                              |
 |----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|
 | **`GameEventManager.cs`**                                                                          | 모든 이벤트 흐름을 관리하는 핵심 클래스. 이벤트 ID 관리, 성공/실패 확률 판정, 전투 승리 판정 등을 수행. |
 | **`Chapter0Events.cs`**, **`Chapter1Events.cs`**, **`Chapter2Events.cs`** ,**`Chapter3Events.cs`** | 주요 스토리 및 이벤트.                                                   |
 | **`Epilogues.cs`**                                                                                 | 게임의 다양한 엔딩 텍스트 및 엔딩 분기 로직.                                      |
+</details>
 
----
 
-### 4. 📂 Items
+<details>
+<summary> 4. 📂 Items </summary>
 
 | 파일                            | 설명                                            |
 | ----------------------------- | --------------------------------------------- |
 | **`ItemList.cs`**             | 게임 내 모든 아이템을 초기화하는 아이템 데이터베이스 클래스.            |
 | **`ItemEffectDictionary.cs`** | 소모품 ID → 효과 함수 매핑. |
+</details>
 
----
-
-### 5. 📂 View
+<details>
+<summary> 5. 📂 View </summary>
 
 | 파일                                                                         | 설명                                            |
 | -------------------------------------------------------------------------- | --------------------------------------------- |
@@ -123,18 +145,18 @@
 | **`StatUpWindow.xaml`**                                                    | 레벨업 시 스탯 분배 창.                                |
 | **`NoticeWindow.xaml`**, **`NewGameCaution.xaml`**, **`YesNoWindow.xaml`** | 경고/알림/확인 팝업창.                                 |
 | **`SettingWindow.xaml`**                                                   | BGM/효과음 볼륨 설정 UI.                             |
+</details>
 
----
-
-### 6. 📂 SaveService
+<details>
+<summary> 6. 📂 SaveService </summary>
 
 | 파일                   | 설명                                         |
 | -------------------- | ------------------------------------------ |
 | **`SaveService.cs`** | GameSession 전체를 JSON으로 저장/불러오기하는 유틸리티 클래스. |
+</details>
 
----
-
-### 7. 📂 Resources
+<details>
+<summary> 7. 📂 Resources </summary>
 
 | 파일                   | 설명                                         |
 |----------------------| ------------------------------------------ |
@@ -146,7 +168,7 @@
 | **`SettingWindowimages`** | 설정 창에서 사용하는 이미지 리소스. |
 | **`TradeImages`** | 상점/거래 UI에서 사용되는 이미지. |
 | **`YesNoWIndowImages`** | 선택 팝업 창에서 쓰이는 UI 이미지. |
-
+</details>
 
 ---
 
